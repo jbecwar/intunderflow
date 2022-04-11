@@ -1,1 +1,19 @@
-<h1>Integer Underflow<h1>
+<h1>Integer Underflow</h1>
+
+<div>
+Welcome to Integer Underflow!  Got a <%= link_to 'programming question?', new_question_path %>
+</div>
+
+<div>
+<h3>Latest Questions:</h3>
+<table> 
+  <% @questions.each do |question| %>
+    <tr>
+      <td><%= question.title %></td>
+      <td><%= link_to 'Answer', question_path(question) %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+
+<%= link_to 'All Questions!', controller: 'questions' %>
